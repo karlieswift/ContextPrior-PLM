@@ -22,7 +22,7 @@ It preserves ESM-2 residue states in overlapping local-context units and injects
 
 <p align="center">
   <a href="figs/overview.png">
-    <img src="assets/overview.png" alt="ContextPrior-PLM overview" width="92%">
+    <img src="figs/overview.png" alt="ContextPrior-PLM overview" width="92%">
   </a>
 </p>
 
