@@ -1,0 +1,4 @@
+# frozen：冻结 ESM，仅训练 adapter / head
+model:
+  input:
+    esm_tune_mode: frozen

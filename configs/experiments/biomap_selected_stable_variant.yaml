@@ -1,0 +1,21 @@
+# Selected BioMap tasks for ContextPrior-PLM training.
+experiment:
+  name: biomap_selected_stable_variant
+  tasks:
+    - antibiotic_resistance #2k
+    - fold_prediction #12.3k
+    - cloning_clf # 23.3k
+    - enzyme_catalytic_efficiency #13.5k
+    - fitness_prediction # 6.3k
+    - localization_prediction # 6.6k
+    - metal_ion_binding # 6k
+    - optimal_temperature # 1.7k
+    - tcr_pmhc_affinity # 19.5k
+
+
+train:
+  epochs: 5
+data:
+  val_fraction: 0.05
+output:
+  root_dir: outputs/runs_biomap_selected

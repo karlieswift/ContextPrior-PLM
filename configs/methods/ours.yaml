@@ -1,0 +1,4 @@
+# ContextPrior-PLM: frozen PLM residue states + fixed unit windows +
+# local/Natural-Vector prior graph + unit encoder.
+experiment:
+  method: ours

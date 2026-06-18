@@ -1,0 +1,12 @@
+# Final dense geometry for short SaProtHub stability sequences.
+data:
+  motif_len: 10
+  motif_stride: 5
+  max_motifs: 15
+
+model:
+  motif:
+    motif_len: 10
+    motif_stride: 5
+    max_motifs: 15
+    graph_local_window: 1

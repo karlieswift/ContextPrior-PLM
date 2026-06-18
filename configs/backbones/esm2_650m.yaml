@@ -1,0 +1,6 @@
+experiment:
+  backbone_name: esm2_650m
+
+model:
+  input:
+    esm_model_name_or_path: facebook/esm2_t33_650M_UR50D

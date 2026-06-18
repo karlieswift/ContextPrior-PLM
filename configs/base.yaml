@@ -1,0 +1,88 @@
+# Base configuration for ContextPrior-PLM.
+
+experiment:
+  name: contextprior_plm
+  tasks:
+    - metal_ion_binding
+  method: ours
+  backbone_name: esm2_650m
+  scale_name: xlarge_650m
+  seed: 42
+
+data:
+  batch_size: 8
+  num_workers: 2
+  val_fraction: 0.0001
+  train_fraction: 1.0
+  esm_max_seq_len: 1022
+  motif_len: 40
+  motif_stride: 20
+  max_motifs: 24
+
+model:
+  input:
+    input_feature_source: esm_residue
+    esm_model_name_or_path: facebook/esm2_t33_650M_UR50D
+    esm_tokenizer_name_or_path: null
+    esm_local_files_only: false
+    esm_max_seq_len: 1022
+    esm_feature_layer: -1
+    esm_project_mode: auto
+    esm_tune_mode: frozen
+    esm_train_last_n_layers: 4
+
+  motif:
+    motif_len: 40
+    max_motifs: 24
+    motif_stride: 20
+    hidden_dim: 192
+    dropout: 0.2
+    num_heads: 6
+
+    num_inference_blocks: 1
+    num_motif_axis_attention: 2
+    graph_use_stats: true
+    graph_num_layers_per_block: 1
+    graph_local_window: 0
+    graph_topk_nv: 6
+    graph_edge_dropout: 0.1
+    graph_inject_scale: 0.3
+    graph_detach_topology: true
+    graph_smoothing_alpha: 0.1
+    graph_prior_exclude_local: true
+
+    num_conv_layers: 2
+    conv_kernel_size: [3, 3]
+
+    use_motif_esm_encoder: false
+    use_motif_axial_encoder: true
+    motif_encoder_num_hidden_layers: 2
+    motif_encoder_num_attention_heads: 6
+    motif_encoder_intermediate_mult: 4
+    motif_encoder_dropout: 0.0
+    motif_encoder_attention_dropout: 0.0
+    motif_encoder_norm_eps: 1.0e-6
+    motif_encoder_use_rope: true
+    motif_encoder_attn_bias: false
+    motif_encoder_ffn_bias: false
+    motif_encoder_impl: sdpa
+
+    pooling: attn
+    classifier_dropout: 0.2
+    min_seq_len: 20
+
+train:
+  epochs: 20
+  lr: 2.0e-5
+  weight_decay: 1.0e-2
+  max_grad_norm: 1.0
+  classifier_dropout: 0.1
+  hidden_dropout: 0.1
+  attention_dropout: 0.1
+
+logging:
+  use_wandb: false
+  wandb_project: contextprior-plm
+
+output:
+  root_dir: outputs/runs

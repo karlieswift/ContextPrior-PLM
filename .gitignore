@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Runtime outputs
+outputs/
+logs/
+wandb/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Local data/cache
+data/stability/
+data/stability_prepared/
+data/biomap/
+.cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

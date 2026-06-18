@@ -1,0 +1,19 @@
+# SaProtHub official split exported to CSV by scripts/prepare_saprothub_splits.py.
+# Used for stable variant prioritization main benchmark.
+experiment:
+  tasks:
+    - saprothub_meta_stability_official
+  name: stability_saprothub_official_csv
+stability_data:
+  source: csv
+  task_name: saprothub_meta_stability_official
+  path: data/stability_prepared/saprothub_meta_stability/official.csv
+  sequence_column: sequence
+  label_column: target
+  split_column: split
+  val_fraction: 0.05
+  train_fraction: 1.0
+stability_eval:
+  higher_is_more_stable: true
+output:
+  root_dir: outputs/runs_stability

@@ -1,0 +1,25 @@
+# Main SaProtHub stability training defaults.
+experiment:
+  method: ours
+  backbone_name: esm2_650m
+  scale_name: xlarge_650m
+  seed: 42
+train:
+  epochs: 5
+  lr: 2.0e-5
+  weight_decay: 1.0e-2
+  max_grad_norm: 1.0
+  train_metric_update_every: 50
+  collect_train_metrics: true
+  eval_test_each_epoch: true
+data:
+  batch_size: 16
+  num_workers: 2
+  esm_max_seq_len: 1022
+  motif_len: 40
+  motif_stride: 20
+  max_motifs: 24
+logging:
+  use_wandb: false
+output:
+  root_dir: outputs/runs_stability

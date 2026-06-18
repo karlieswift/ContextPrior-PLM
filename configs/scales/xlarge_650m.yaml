@@ -1,0 +1,11 @@
+# 650M-scale ContextPrior hidden-size configuration.
+experiment:
+  scale_name: xlarge_650m
+
+model:
+  motif:
+    hidden_dim: 384
+    num_heads: 12
+    num_inference_blocks: 1
+    motif_encoder_num_hidden_layers: 4
+    motif_encoder_num_attention_heads: 12

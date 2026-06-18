@@ -1,0 +1,13 @@
+model:
+  motif:
+    num_inference_blocks: 1
+    num_motif_axis_attention: 2
+
+    graph_topk_nv: 6
+    graph_num_layers_per_block: 1
+    graph_local_window: 0
+    graph_inject_scale: 0.3
+    graph_smoothing_alpha: 0.1
+
+    num_conv_layers: 2
+    use_motif_axial_encoder: true
