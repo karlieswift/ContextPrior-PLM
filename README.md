@@ -2,7 +2,7 @@
 
 # ContextPrior-PLM
 
-### Sequence-statistical local-context graph adaptation of ESM-2 representations for protein stability prediction
+### Natural-Vector-guided local-context graph adaptation of protein language models for stability prediction
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python\&logoColor=white)]()
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch\&logoColor=white)]()
