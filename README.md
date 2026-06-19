@@ -204,11 +204,7 @@ If you use ContextPrior-PLM in your research, please cite:
 }
 ```
 
----
 
-## Contact
-
-For questions, issues, or collaboration requests, please open a GitHub issue or contact the corresponding authors listed in the manuscript.
 
 ---
 
